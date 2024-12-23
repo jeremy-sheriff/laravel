@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: fgWL5ne5OI25HdEZ  # Change to your desired root password
+      MYSQL_DATABASE: laravel        # Change to your desired database name
+      MYSQL_USER: amin                # Change to your desired username
+      MYSQL_PASSWORD: fgWL5ne5OI25HdEZ        # Change to your desired password
+    ports:
+      - "3306:3306"                      # Exposing port 3306 for MySQL
+    volumes:
+      - mysql_data:/var/lib/mysql        # Persistent storage for MySQL data
+
+volumes:
+  mysql_data:
+    driver: local
